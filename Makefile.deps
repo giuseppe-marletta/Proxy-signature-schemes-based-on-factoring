@@ -1,0 +1,204 @@
+lib-OwnerSigner.o: lib-OwnerSigner.c include/lib-OwnerSigner.h \
+  /usr/local/include/gmp.h include/lib-rsa-enc.h include/lib-mesg.h \
+  include/lib-timing.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-misc.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-shared.h include/lib-proxyUnprotected-monoSign.h
+lib-data.o: lib-data.c include/lib-data.h /usr/local/include/gmp.h
+lib-mesg.o: lib-mesg.c include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/gmp.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h
+lib-misc.o: lib-misc.c include/lib-misc.h /usr/local/include/gmp.h \
+  /usr/local/include/pbc/pbc.h /usr/local/include/pbc/pbc_utils.h \
+  /usr/local/include/pbc/pbc_field.h /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h
+lib-proxyProtected-monoSign.o: lib-proxyProtected-monoSign.c \
+  include/lib-proxyProtected-monoSign.h /usr/local/include/gmp.h \
+  include/lib-shared.h include/lib-misc.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-proxyUnprotected-monoSign.h
+lib-proxyProtected-multiSign.o: lib-proxyProtected-multiSign.c \
+  include/lib-proxyProtected-multiSign.h /usr/local/include/gmp.h \
+  include/lib-shared.h include/lib-misc.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-proxyUnprotected-monoSign.h
+lib-proxyUnprotected-monoSign.o: lib-proxyUnprotected-monoSign.c \
+  include/lib-proxyUnprotected-monoSign.h /usr/local/include/gmp.h \
+  include/lib-shared.h include/lib-misc.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h
+lib-proxyUnprotected-multiSign.o: lib-proxyUnprotected-multiSign.c \
+  include/lib-proxyUnprotected-multiSign.h /usr/local/include/gmp.h \
+  include/lib-shared.h include/lib-misc.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-proxyUnprotected-monoSign.h
+lib-rsa-enc.o: lib-rsa-enc.c include/lib-rsa-enc.h include/lib-mesg.h \
+  include/lib-timing.h /usr/local/include/gmp.h \
+  /usr/local/include/pbc/pbc.h /usr/local/include/pbc/pbc_utils.h \
+  /usr/local/include/pbc/pbc_field.h /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h
+lib-shared.o: lib-shared.c include/lib-shared.h /usr/local/include/gmp.h \
+  include/lib-misc.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-proxyUnprotected-monoSign.h
+lib-timing.o: lib-timing.c include/lib-timing.h
+lib-verifier.o: lib-verifier.c include/lib-verifier.h \
+  /usr/local/include/gmp.h include/lib-data.h include/lib-OwnerSigner.h \
+  include/lib-rsa-enc.h include/lib-mesg.h include/lib-timing.h \
+  /usr/local/include/pbc/pbc.h /usr/local/include/pbc/pbc_utils.h \
+  /usr/local/include/pbc/pbc_field.h /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-misc.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-shared.h \
+  include/lib-proxyUnprotected-monoSign.h
+test-OwnerSigner.o: test-OwnerSigner.c include/lib-OwnerSigner.h \
+  /usr/local/include/gmp.h include/lib-rsa-enc.h include/lib-mesg.h \
+  include/lib-timing.h /usr/local/include/pbc/pbc.h \
+  /usr/local/include/pbc/pbc_utils.h /usr/local/include/pbc/pbc_field.h \
+  /usr/local/include/pbc/pbc_param.h \
+  /usr/local/include/pbc/pbc_pairing.h \
+  /usr/local/include/pbc/pbc_curve.h /usr/local/include/pbc/pbc_mnt.h \
+  /usr/local/include/pbc/pbc_a1_param.h \
+  /usr/local/include/pbc/pbc_a_param.h \
+  /usr/local/include/pbc/pbc_d_param.h \
+  /usr/local/include/pbc/pbc_e_param.h \
+  /usr/local/include/pbc/pbc_f_param.h \
+  /usr/local/include/pbc/pbc_g_param.h \
+  /usr/local/include/pbc/pbc_i_param.h \
+  /usr/local/include/pbc/pbc_random.h \
+  /usr/local/include/pbc/pbc_memory.h include/lib-misc.h \
+  /usr/local/include/nettle/sha2.h \
+  /usr/local/include/nettle/nettle-types.h include/lib-data.h \
+  include/lib-shared.h include/lib-proxyUnprotected-monoSign.h \
+  include/lib-verifier.h include/lib-proxyUnprotected-multiSign.h \
+  include/lib-proxyProtected-monoSign.h \
+  include/lib-proxyProtected-multiSign.h

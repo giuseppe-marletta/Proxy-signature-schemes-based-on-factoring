@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "lib-shared.h": "c",
+        "lib-proxyprotected-multisign.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}
