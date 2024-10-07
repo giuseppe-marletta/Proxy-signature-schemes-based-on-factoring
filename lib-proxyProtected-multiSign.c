@@ -86,34 +86,11 @@ void verifyYK (mpz_t Ri, mpz_t Yi, mpz_t Ki, mpz_t k, int i, signKeyPool_usersPr
     if ( i > 1 )
     {
         int j = 2;
-        //printf("\n il valore di i: %d\n", i);
         while ( j <= i)
         {
-            //printf("\nil valore di j: %d \n", j);
-            //printf("\nil valore di i-j: %d \n", i-j);
             mpz_powm(kie,kie,signKeyPoolUsersProt->signKeys_usersProt[i-j]->e, signKeyPoolUsersProt->signKeys_usersProt[i-j]->n);
             j++;
         }
     }
-    
-
-    /*if(mpz_congruent_p(firstM,secondM, keysOwner->n))
-    {
-        printf("\n  Il valore y numero %d verificato correttamente\n\n", i);
-    }
-    else
-    {
-        printf("\n Il valore y numero %d verificato ma errato\n\n", i);
-    }
-
-    if(mpz_cmp(kie,k) == 0)
-    {
-        printf("\n  Il valore k numero %d verificato correttamente\n\n", i);
-    }
-    else
-    {
-        printf("\n Il valore k numero %d verificato ma errato\n\n", i);
-    } */
-
     mpz_clears(firstM,secondM, yie,kie, NULL);
 }

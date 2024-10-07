@@ -55,11 +55,8 @@ void computeHashProt(signKey_userProt_t signKeyUserProt, int hash_out, mpz_t has
 
 void compute_hash_by_hash_out(int hash_out, size_t block_size_uno, char* block_to_hash_uno, size_t block_size_due, char* block_to_hash_due, mpz_t hash_value) 
 { 
-    //mpz_t* hash_value = malloc(sizeof(mpz_t));
     mpz_init(hash_value);
     mpz_t *temp_value;
-    //mpz_init(temp_value);
-    //mpz_set_ui(hash_value,10);
     if (hash_out == 224)
         temp_value = hashing_macro(sha224_ctx, sha224_init, sha224_update, sha224_digest,
                          SHA224_DIGEST_SIZE,block_size_uno, block_to_hash_uno, block_size_due, block_to_hash_due);
@@ -73,7 +70,5 @@ void compute_hash_by_hash_out(int hash_out, size_t block_size_uno, char* block_t
         temp_value = hashing_macro(sha512_ctx, sha512_init, sha512_update, sha512_digest,
                          SHA512_DIGEST_SIZE,block_size_uno, block_to_hash_uno, block_size_due, block_to_hash_due);
     mpz_set(hash_value, *temp_value);
-
-    //return hash_value;
 }
 

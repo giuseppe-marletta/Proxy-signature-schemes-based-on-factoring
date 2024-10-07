@@ -34,11 +34,8 @@ void computeUnMultiSign(message_t message, proxyUnprotected_multiSign_t multiUnS
         mpz_init(Yi[i]);
         if(i == 0)
         {
-            //pmesg_mpz(msg_verbose, "Ti", t[i]);
             mpz_powm(Yi[i],signKeyPoolUsers->signKeys_users[i]->vi,k,keysOwner->n);
-            //pmesg_mpz(msg_verbose, "Yi", Yi[i]);
             mpz_mul(Yi[i],t[i],Yi[i]); 
-            //printf("\n\nPROVA\n\n");
             mpz_mod(Yi[i],Yi[i],keysOwner->n);
         }
         else 
@@ -53,7 +50,6 @@ void computeUnMultiSign(message_t message, proxyUnprotected_multiSign_t multiUnS
     mpz_set(multiUnSign->y,Yi[fixed_n_signers-1]);
     pmesg_mpz(msg_verbose, "valore k multifirma proxy non protetto", multiUnSign->k);
     pmesg_mpz(msg_verbose, "valore y multifirma proxy non protetto", multiUnSign->y);
-
 }
 
 
@@ -64,7 +60,6 @@ void verifyY (mpz_t Ri, mpz_t Yi, int i, signKeyPool_users_t signKeyPoolUsers, r
     mpz_t yie;
     mpz_inits(firstM, secondM, yie, NULL);
     
-
     mpz_t hk; 
     computeHash(signKeyPoolUsers->signKeys_users[0],keysOwner, hash_out, hk);
     if(i > 1)

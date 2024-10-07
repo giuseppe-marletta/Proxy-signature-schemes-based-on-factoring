@@ -11,14 +11,9 @@ void verifyProxySignerKey(signKey_user_t signKeyUser,rsa_keysOwner_t keysOwner, 
     mpz_init(uno);
     mpz_set_ui(uno,1);
 
-
     mpz_powm(vie,signKeyUser->vi, keysOwner->e,keysOwner->n);
-    //gmp_printf("\nIl valore di vi^e0 nel verifier: \n %Zx \n", vie);
-
     mpz_t baseVi;
     computeHash(signKeyUser, keysOwner,hash_out,baseVi);
-    //gmp_printf("\nIl valore dell'hash nel verifier: %Zx\n",*baseVi);
-
 
     mpz_t ver;
     mpz_init(ver);
@@ -53,12 +48,8 @@ void verifyProxyUnprotectedMonoSign(rsa_keysOwner_t keysOwner, proxyUnprotected_
     mpz_mul(rver,ye,hk);
     mpz_mod(rver,rver,keysOwner->n);
 
-    //gmp_printf("\n Il valore di r primo: \n %Zd", rver);
-
     mpz_t ver;
     computeMpzHash(monoUnSign, rver, hash_out, ver);
-
-    //gmp_printf("\n Il valore dell'hash nella verifica: \n %Zd", ver);
 
     if(mpz_cmp(ver,monoUnSign->k) == 0)
     {
@@ -93,12 +84,8 @@ void verifyProxyUnprotectedMultiSign(rsa_keysOwner_t keysOwner, proxyUnprotected
     mpz_mul(rver,ye,hk);
     mpz_mod(rver,rver,keysOwner->n);
 
-    //gmp_printf("\n Il valore di r primo: \n %Zd", rver);
-
     mpz_t ver;
     computeMpzHash(multiUnSign, rver, hash_out, ver);
-
-    //gmp_printf("\n Il valore dell'hash nella verifica: \n %Zd", ver);
 
     if(mpz_cmp(ver,multiUnSign->k) == 0)
     {
@@ -108,7 +95,6 @@ void verifyProxyUnprotectedMultiSign(rsa_keysOwner_t keysOwner, proxyUnprotected
     {
         printf("\n proxyUnprotectedMultiSign verificata ma errata\n\n");
     }
-
 
 }
 
@@ -199,20 +185,16 @@ void verifyProxyProtectedMultiSign(rsa_keysOwner_t keysOwner, proxyProtected_mul
     mpz_mul(rver,ye,hk);
     mpz_mod(rver,rver,keysOwner->n);
 
-    //gmp_printf("\n Il valore di r primo: \n %Zd", rver);
-
     mpz_t ver;
     computeMpzHash(multiProtSign, rver, hash_out, ver);
 
-    //gmp_printf("\n Il valore dell'hash nella verifica: \n %Zd", ver);
-
     if(mpz_cmp(ver,kver) == 0)
     {
-        printf("\n proxyUnprotectedMultiSign verificata correttamente\n\n");
+        printf("\n proxyProtectedMultiSign verificata correttamente\n\n");
     }
     else
     {
-        printf("\n proxyUnprotectedMultiSign verificata ma errata\n\n");
+        printf("\n proxyProtectedMultiSign verificata ma errata\n\n");
     } 
 
 }

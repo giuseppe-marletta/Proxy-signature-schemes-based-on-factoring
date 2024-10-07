@@ -231,11 +231,6 @@ int main(int argc, char *argv[])
     
     verifyProxyProtectedMultiSign(keysOwner, multiProtSign, signKeyPoolUsersProt, hash_out, fixed_n_signers);
 
-
-
-
-
-
     
     proxyUnprotected_monoSign_clear(monoUnSign);
     proxyUnprotected_multiSign_clear(multiUnSign);
