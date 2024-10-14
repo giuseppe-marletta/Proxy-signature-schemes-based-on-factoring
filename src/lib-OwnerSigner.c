@@ -6,7 +6,7 @@ void RsaKeyGeneration(rsa_keysOwner_t keysOwner,gmp_randstate_t prng, int mod_bi
     rsa_keys_t keys;
     long int rsa_exp = 0;
     
-    pmesg(msg_verbose, "Generazione chiavi di KeysOwner...");
+    pmesg(msg_verbose, "\nGenerazione chiavi di KeysOwner...\n");
     rsa1_generate_keys(keys, mod_bits, rsa_exp, prng, true);
 
     mpz_inits(keysOwner->n,keysOwner->e, keysOwner->p,keysOwner->q,keysOwner->d,NULL);
@@ -65,7 +65,7 @@ void SignKeyProxyUsersMultiGeneration(signKeyPool_users_t signKeyPoolUsers ,rsa_
         int ecmph = mpz_cmp(keysOwner->e, baseVi);
         if(ecmph < 0)
         {
-            printf("\n e0 deve essere maggiore di h()!!! \n");
+            printf("\ne0 deve essere maggiore di h()!!! \n");
             exit(1);
         }
         mpz_t d_neg_value;
@@ -73,7 +73,7 @@ void SignKeyProxyUsersMultiGeneration(signKeyPool_users_t signKeyPoolUsers ,rsa_
         mpz_neg(d_neg_value, keysOwner->d);
         mpz_powm(signKeyPoolUsers->signKeys_users[i]->vi,baseVi, d_neg_value, keysOwner->n);
         mpz_clears(baseVi, d_neg_value,NULL);
-        pmesg_mpz(msg_verbose, " La chiave di firma del proxy signer non protetto", signKeyPoolUsers->signKeys_users[i]->vi);
+        pmesg_mpz(msg_verbose, "La chiave di firma del proxy signer non protetto", signKeyPoolUsers->signKeys_users[i]->vi);
     }
     
 }
@@ -106,7 +106,7 @@ void SignKeyProxyUsersProtGeneration(signKey_userProt_t signKeyUserProt,rsa_keys
     mpz_set(signKeyUserProt->vi, vi);
     mpz_set(signKeyUserProt->ui, ui);
     mpz_set(signKeyUserProt->wi, wi);
-    pmesg_mpz(msg_verbose, "La chiave di firma del proxy signer protetto", signKeyUserProt->vi);
+    pmesg_mpz(msg_verbose, " La chiave di firma del proxy signer protetto", signKeyUserProt->vi);
    
 }
 
@@ -129,11 +129,11 @@ void SignKeyProxyUsersProtMultiGeneration(signKeyPool_usersProt_t signKeyPoolUse
         mpz_set(signKeyPoolUsersProt->signKeys_usersProt[i]->d, keys->d);
         int id = rand() % 10001;
         signKeyPoolUsersProt->signKeys_usersProt[i]->id = id;
-        pmesg_mpz(msg_very_verbose, "fattore primo", keys->p);
-        pmesg_mpz(msg_very_verbose, "fattore primo", keys->q);
-        pmesg_mpz(msg_very_verbose, "modulo composito", signKeyPoolUsersProt->signKeys_usersProt[i]->n);
-        pmesg_mpz(msg_very_verbose, "esponente pubblico", signKeyPoolUsersProt->signKeys_usersProt[i]->e);
-        pmesg_mpz(msg_very_verbose, "esponente privato", signKeyPoolUsersProt->signKeys_usersProt[i]->d);
+        pmesg_mpz(msg_very_verbose, "Fattore primo", keys->p);
+        pmesg_mpz(msg_very_verbose, "Fattore primo", keys->q);
+        pmesg_mpz(msg_very_verbose, "Modulo composito", signKeyPoolUsersProt->signKeys_usersProt[i]->n);
+        pmesg_mpz(msg_very_verbose, "Esponente pubblico", signKeyPoolUsersProt->signKeys_usersProt[i]->e);
+        pmesg_mpz(msg_very_verbose, "Esponente privato", signKeyPoolUsersProt->signKeys_usersProt[i]->d);
         mpz_t ui, wi;
         mpz_inits(ui,wi, NULL);
         mpz_t vi;
@@ -144,7 +144,7 @@ void SignKeyProxyUsersProtMultiGeneration(signKeyPool_usersProt_t signKeyPoolUse
         mpz_set(signKeyPoolUsersProt->signKeys_usersProt[i]->vi, vi);
         mpz_set(signKeyPoolUsersProt->signKeys_usersProt[i]->ui, ui);
         mpz_set(signKeyPoolUsersProt->signKeys_usersProt[i]->wi, wi);
-        pmesg_mpz(msg_verbose, "La chiave di firma del proxy signer non protetto", signKeyPoolUsersProt->signKeys_usersProt[i]->vi);
+        pmesg_mpz(msg_verbose, " La chiave di firma del proxy signer non protetto", signKeyPoolUsersProt->signKeys_usersProt[i]->vi);
     }
 }
 

@@ -29,7 +29,7 @@ void computeProtMonoSign(message_t message, proxyprotected_monoSign_t monoProtSi
     mpz_set(monoProtSign->y,y);
     
 
-    pmesg_mpz(msg_verbose, "valore y monofirma proxy protetto", monoProtSign->y);
-    pmesg_mpz(msg_verbose, "valore u monofirma proxy protetto", monoProtSign->u);
+    pmesg_mpz(msg_verbose, "Valore y monofirma proxy protetto", monoProtSign->y);
+    pmesg_mpz(msg_verbose, "Valore u monofirma proxy protetto", monoProtSign->u);
 
 }

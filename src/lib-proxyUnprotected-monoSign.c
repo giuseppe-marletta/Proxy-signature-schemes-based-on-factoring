@@ -24,6 +24,6 @@ void computeUnMonoSign(message_t message,proxyUnprotected_monoSign_t monoUnSign,
     mpz_mod(y,y,keysOwner->n);
     mpz_set(monoUnSign->y,y);
     
-    pmesg_mpz(msg_verbose, "valore y monofirma proxy non protetto", monoUnSign->y);
-    pmesg_mpz(msg_verbose, "valore k monofirma proxy non protetto", monoUnSign->k);
+    pmesg_mpz(msg_verbose, "Valore y monofirma proxy non protetto", monoUnSign->y);
+    pmesg_mpz(msg_verbose, "Valore k monofirma proxy non protetto", monoUnSign->k);
 }

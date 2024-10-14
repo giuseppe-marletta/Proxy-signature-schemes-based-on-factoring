@@ -92,11 +92,11 @@ void rsa1_generate_keys(rsa_keys_t keys, unsigned int n_bits,
 
     if(isLog == true)
     {
-        pmesg_mpz(msg_very_verbose, "fattore primo", p);
-        pmesg_mpz(msg_very_verbose, "fattore primo", q);
-        pmesg_mpz(msg_very_verbose, "modulo composito", keys->n);
-        pmesg_mpz(msg_very_verbose, "esponente pubblico", keys->e);
-        pmesg_mpz(msg_very_verbose, "esponente privato", keys->d);
+        pmesg_mpz(msg_very_verbose, "Fattore primo", p);
+        pmesg_mpz(msg_very_verbose, "Fattore primo", q);
+        pmesg_mpz(msg_very_verbose, "Modulo composito", keys->n);
+        pmesg_mpz(msg_very_verbose, "Esponente pubblico", keys->e);
+        pmesg_mpz(msg_very_verbose, "Esponente privato", keys->d);
     }
     mpz_clears(p, q, phi, tmp1, tmp2, NULL);
 

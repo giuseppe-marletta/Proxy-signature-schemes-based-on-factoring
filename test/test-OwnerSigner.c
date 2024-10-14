@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     calibrate_timing_methods();
 
    
-    printf("\n Inizializzazione PRNG...\n\n");
+    printf("\nInizializzazione PRNG...\n");
     gmp_randinit_default(prng);
     gmp_randseed_os_rng(prng, prng_sec_level);
 
@@ -121,20 +121,20 @@ int main(int argc, char *argv[])
             text->message = mpz_get_str(NULL,10, randMsg);
         }
 
-    printf("\n il numero di signer multipli: %d \n", fixed_n_signers);
-    printf("\n Il valore del modulo: %d \n", mod_bits);
-    printf("\n Il valore dell'output hash: %d \n", hash_out);
+    printf("\nIl numero di signer multipli: %d \n", fixed_n_signers);
+    printf("\nIl valore del modulo: %d \n", mod_bits);
+    printf("\nIl valore dell'output hash: %d \n", hash_out);
 
-    printf("\n Il messaggio scritto:\n %s\n\n", text->message);
+    printf("\nIl messaggio scritto:\n%s\n\n\n", text->message);
     
     
     perform_wc_time_sampling_period(
             timing, applied_sampling_time, max_samples, tu_millis,
             { RsaKeyGeneration(keysOwner,prng,mod_bits); }, {});
         if (do_bench)
-            printf_short_stats(" RsaKeyGeneration_OriginalSigner", timing, "");
+            printf_short_stats("\nRsaKeyGeneration_OriginalSigner", timing, "");
 
-    printf("\n Generazioni delle chiavi dell'original signer effettuata con successo! \n\n");
+    printf("\nGenerazioni delle chiavi dell'original signer effettuata con successo! \n\n\n");
 
 
     char* mw = "Mandatory";
@@ -144,13 +144,13 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("\n Generazione della chiave di firma del proxy signer non protetto...\n");
+    printf("\nGenerazione della chiave di firma del proxy signer non protetto...\n\n");
     perform_wc_time_sampling_period(
             timing, applied_sampling_time, max_samples, tu_millis,
             { SignKeyProxyUsersGeneration(signKeyUser, keysOwner,mw,sn[0], hash_out); }, {});
         if (do_bench)
-            printf_short_stats(" SignKeyProxyUsersGeneration", timing, "");
-    printf("\n Generazione della chiave di firma del proxy signer non protetto effettuata con successo!\n");
+            printf_short_stats("SignKeyProxyUsersGeneration", timing, "");
+    printf("\nGenerazione della chiave di firma del proxy signer non protetto effettuata con successo!\n");
 
 
     verifyProxySignerKey(signKeyUser,keysOwner,hash_out);
@@ -162,7 +162,7 @@ int main(int argc, char *argv[])
             timing, applied_sampling_time, max_samples, tu_millis,
             { computeUnMonoSign(text,monoUnSign,keysOwner,signKeyUser,prng, hash_out); }, {});
         if (do_bench)
-            printf_short_stats(" ComputeUnMonoSign", timing, "");
+            printf_short_stats("ComputeUnMonoSign", timing, "");
     
 
 
@@ -170,13 +170,13 @@ int main(int argc, char *argv[])
 
 
     signKeyPool_users_init(signKeyPoolUsers,fixed_n_signers);
-    printf("\n Generazione delle chiavi di firma dei proxy signer multipili non protetti... \n");
+    printf("\n\nGenerazione delle chiavi di firma dei proxy signer multipili non protetti... \n\n");
     perform_wc_time_sampling_period(
             timing, applied_sampling_time, max_samples, tu_millis,
             {SignKeyProxyUsersMultiGeneration(signKeyPoolUsers, keysOwner, mw, sn, hash_out, fixed_n_signers);}, {});
         if (do_bench)
-            printf_short_stats(" SignKeyProxyUsersMultiGeneration", timing, "");
-    printf("\n Generazione delle chiavi di firma dei proxy signer multipli non protetti effettuata con successo!\n\n");
+            printf_short_stats("SignKeyProxyUsersMultiGeneration", timing, "");
+    printf("\nGenerazione delle chiavi di firma dei proxy signer multipli non protetti effettuata con successo!\n\n");
 
 
     proxyUnprotected_multiSign_init(multiUnSign,fixed_n_signers);
@@ -184,17 +184,17 @@ int main(int argc, char *argv[])
             timing, applied_sampling_time, max_samples, tu_millis,
             {computeUnMultiSign(text, multiUnSign, keysOwner, signKeyPoolUsers,prng,hash_out,fixed_n_signers);}, {});
         if (do_bench)
-            printf_short_stats(" computeUnMultiSign", timing, "");
+            printf_short_stats("computeUnMultiSign", timing, "");
     
     verifyProxyUnprotectedMultiSign(keysOwner, multiUnSign, signKeyPoolUsers, hash_out, fixed_n_signers);
 
-    printf("\nGenerazione delle chiavi e della chiave di firma del proxy signer protetto...\n");
+    printf("\n\nGenerazione delle chiavi e della chiave di firma del proxy signer protetto...\n\n");
     perform_wc_time_sampling_period(
             timing, applied_sampling_time, max_samples, tu_millis,
             { SignKeyProxyUsersProtGeneration(signKeyUserProt,keysOwner,mw,prng,mod_bits, hash_out); }, {});
         if (do_bench)
-            printf_short_stats(" SignKeyProxyUsersProtGeneration", timing, "");
-    printf("\n Generazione delle chiavi e della chiave di firma del proxy signer protetto effettuata con successo! \n");
+            printf_short_stats("SignKeyProxyUsersProtGeneration", timing, "");
+    printf("\nGenerazione delle chiavi e della chiave di firma del proxy signer protetto effettuata con successo! \n");
 
 
 
@@ -207,18 +207,18 @@ int main(int argc, char *argv[])
             timing, applied_sampling_time, max_samples, tu_millis,
             {computeProtMonoSign(text,monoProtSign,keysOwner,signKeyUserProt,prng, hash_out);}, {});
         if (do_bench)
-            printf_short_stats(" computerProtMonoSign", timing, "");
+            printf_short_stats("computerProtMonoSign", timing, "");
     verifyProxyProtectedMonoSign(keysOwner, monoProtSign, signKeyUserProt, hash_out);
 
 
-    printf("\nGenerazione delle chiavi e delle chiavi di firma dei proxy signer multipli protetti...\n");
+    printf("\n\nGenerazione delle chiavi e delle chiavi di firma dei proxy signer multipli protetti...\n\n");
     signKeyPool_usersProt_init(signKeyPoolUsersProt, fixed_n_signers);
      perform_wc_time_sampling_period(
             timing, applied_sampling_time, max_samples, tu_millis,
             {SignKeyProxyUsersProtMultiGeneration(signKeyPoolUsersProt, keysOwner, mw, prng, mod_bits, hash_out, fixed_n_signers);}, {});
         if (do_bench)
-            printf_short_stats(" SignKeyPRoxyUsersProtMultiGeneration", timing, "");
-    printf("\n Generazione delle chiavi e delle chiavi di firma dei proxy signer multipli protetti effettuata con successo! \n");
+            printf_short_stats("SignKeyPRoxyUsersProtMultiGeneration", timing, "");
+    printf("\nGenerazione delle chiavi e delle chiavi di firma dei proxy signer multipli protetti effettuata con successo! \n\n");
     
 
 
@@ -227,7 +227,7 @@ int main(int argc, char *argv[])
             timing, applied_sampling_time, max_samples, tu_millis,
             {computeProtMultiSign(text, multiProtSign, keysOwner, signKeyPoolUsersProt, prng, hash_out,fixed_n_signers);}, {});
         if (do_bench)
-            printf_short_stats(" computeProtMultiSign", timing, "");
+            printf_short_stats("computeProtMultiSign", timing, "");
     
     verifyProxyProtectedMultiSign(keysOwner, multiProtSign, signKeyPoolUsersProt, hash_out, fixed_n_signers);
 
