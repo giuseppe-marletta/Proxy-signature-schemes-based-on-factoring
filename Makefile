@@ -77,8 +77,8 @@ plots/%.svg: plots/%.plt plots/%.plt.dat
 git-add-releases:
 	git add $(RELEASES)
 
-clean:
-	$(RM) $(EPROGS) $(OBJS) $(POBJS) $(DEPS_FILE) $(PLOTS_SVG) $(OTHER_FILES_TO_CLEAN)
+#clean:
+#	$(RM) $(EPROGS) $(OBJS) $(POBJS) $(DEPS_FILE) $(PLOTS_SVG) $(OTHER_FILES_TO_CLEAN)
 
 depend:
 	$(DEPS_GEN) $(CFLAGS) $(SRCS) > $(DEPS_FILE)
