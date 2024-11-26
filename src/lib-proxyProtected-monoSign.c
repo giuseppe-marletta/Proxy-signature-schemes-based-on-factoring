@@ -14,7 +14,7 @@ void computeProtMonoSign(message_t message, proxyprotected_monoSign_t monoProtSi
     mpz_powm(r,t,keysOwner->e,keysOwner->n);
 
     mpz_t k;
-    computeMpzHash(monoProtSign,r,hash_out,k);
+    computeMpzHash(message,r,hash_out,k);
     mpz_t u;
     mpz_init(u);
     mpz_powm(u,k,signKeyUserProt->d,signKeyUserProt->n);
