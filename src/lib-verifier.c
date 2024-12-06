@@ -49,7 +49,7 @@ void verifyProxyUnprotectedMonoSign(rsa_keysOwner_t keysOwner, proxyUnprotected_
     mpz_mod(rver,rver,keysOwner->n);
 
     mpz_t ver;
-    computeMpzHash(monoUnSign, rver, hash_out, ver);
+    computeMpzHash(monoUnSign->m, rver, hash_out, ver);
 
     if(mpz_cmp(ver,monoUnSign->k) == 0)
     {
@@ -85,7 +85,7 @@ void verifyProxyUnprotectedMultiSign(rsa_keysOwner_t keysOwner, proxyUnprotected
     mpz_mod(rver,rver,keysOwner->n);
 
     mpz_t ver;
-    computeMpzHash(multiUnSign, rver, hash_out, ver);
+    computeMpzHash(multiUnSign->m, rver, hash_out, ver);
 
     if(mpz_cmp(ver,multiUnSign->k) == 0)
     {
@@ -142,7 +142,7 @@ void verifyProxyProtectedMonoSign(rsa_keysOwner_t keysOwner, proxyprotected_mono
     mpz_mul(rver,rver,ye);
     mpz_mod(rver, rver, keysOwner->n);
     mpz_t hashvertwo;
-    computeMpzHash(monoProtSign,rver, hash_out, hashvertwo);
+    computeMpzHash(monoProtSign->m,rver, hash_out, hashvertwo);
     if(mpz_cmp(hashvertwo,kver) == 0)
     {
         printf("\nproxyProtectedMonoSign verifica correttamente \n\n");
@@ -186,7 +186,7 @@ void verifyProxyProtectedMultiSign(rsa_keysOwner_t keysOwner, proxyProtected_mul
     mpz_mod(rver,rver,keysOwner->n);
 
     mpz_t ver;
-    computeMpzHash(multiProtSign, rver, hash_out, ver);
+    computeMpzHash(multiProtSign->m, rver, hash_out, ver);
 
     if(mpz_cmp(ver,kver) == 0)
     {

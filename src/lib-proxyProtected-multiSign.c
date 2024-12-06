@@ -25,7 +25,7 @@ void computeProtMultiSign(message_t message, proxyProtected_multiSign_t multiPro
         }
     }
     mpz_t k; 
-    computeMpzHash(message,Ri[fixed_n_signers-1], hash_out,k);
+    computeMpzHash(multiProtSign->m,Ri[fixed_n_signers-1], hash_out,k);
     mpz_t Yi[fixed_n_signers];
     mpz_t Ki[fixed_n_signers];
 

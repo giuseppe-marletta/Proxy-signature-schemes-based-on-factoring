@@ -26,11 +26,11 @@ void randGen(rsa_keysOwner_t keysOwner, gmp_randstate_t prng, mpz_t rannum)
 }
 
 
-void computeMpzHash(message_t message, mpz_t r, int hash_out, mpz_t hash_value)
+void computeMpzHash(char* message, mpz_t r, int hash_out, mpz_t hash_value)
 {
     char* rstr;
     rstr = mpz_get_str(NULL,10,r);
-    compute_hash_by_hash_out(hash_out,strlen(message->message), message->message, strlen(rstr), rstr, hash_value);
+    compute_hash_by_hash_out(hash_out,strlen(message), message, strlen(rstr), rstr, hash_value);
 }
 
 

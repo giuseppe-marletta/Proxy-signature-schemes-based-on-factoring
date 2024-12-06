@@ -13,7 +13,7 @@ void computeUnMonoSign(message_t message,proxyUnprotected_monoSign_t monoUnSign,
     mpz_init(r);
     mpz_powm(r,t,keysOwner->e,keysOwner->n);
     mpz_t k; 
-    computeMpzHash(message,r, hash_out,k);
+    computeMpzHash(monoUnSign->m,r, hash_out,k);
     mpz_set(monoUnSign->k, k);
 
     mpz_t y; 

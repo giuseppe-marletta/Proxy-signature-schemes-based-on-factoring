@@ -26,7 +26,7 @@ void computeUnMultiSign(message_t message, proxyUnprotected_multiSign_t multiUnS
     }
     mpz_t k;
     mpz_init(k);
-    computeMpzHash(message,Ri[fixed_n_signers-1], hash_out, k);
+    computeMpzHash(multiUnSign->m,Ri[fixed_n_signers-1], hash_out, k);
     mpz_set(multiUnSign->k, k);
     mpz_t *Yi = malloc(fixed_n_signers * sizeof(mpz_t));
     for(int i = 0; i < fixed_n_signers; i++)

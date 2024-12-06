@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
     int hash_out = default_hash_out;
     bool do_bench = false;
     stats_t timing;
-    elapsed_time_t time;
+    //elapsed_time_t time;
     long int applied_sampling_time = 0;
 
 
