@@ -11,7 +11,7 @@ Il progetto è strutturato come segue:
 ```shell
 .
 ├── include # contiene i file header
-├── lib # contiene le librerie "utility" fornite dal professore Mario Di Raimondo
+├── lib # contiene le librerie "utility" fornite da terzi
 ├── src # contiene i file sorgente
 └── test # contiene il file test
 ```
