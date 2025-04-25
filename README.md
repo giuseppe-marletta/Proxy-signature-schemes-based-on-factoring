@@ -57,4 +57,14 @@ Una volta compilato, il test può essere esguito mediante il seguente comando:
 ./test-OwnerSigner [signers <n>]
 ```
 
+![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-red)
+
+# 🚫 Avviso legale
+
+> ⚠️ Questo progetto contiene codice protetto da copyright.  
+> **Tutti i diritti sono riservati.**  
+> L'uso, la copia, la modifica e la distribuzione del contenuto **non sono consentiti** senza autorizzazione scritta da parte dell'autore.
+
+Per richieste di utilizzo o chiarimenti, contattare l'autore tramite i canali ufficiali del repository.
+
 
